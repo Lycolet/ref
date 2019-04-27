@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour {
-	
+	//エディタ拡張？ループ有り無し？要検討
+
 	[System.Serializable] private struct Move   //キャラの移動を記述
 	{
 		[SerializeField] int time;

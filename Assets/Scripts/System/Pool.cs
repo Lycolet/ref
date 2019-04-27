@@ -23,6 +23,9 @@ public class Pool : MonoBehaviour
         StopAllCoroutines();
     }
 
+    /// <summary>
+    /// 全部消す
+    /// </summary>
     public void OnDestroy()
     {
         if (poolAttachedObject == null)
@@ -39,6 +42,10 @@ public class Pool : MonoBehaviour
         pooledObjectList.Clear();
     }
 
+    /// <summary>
+    /// 正でかつ現在と異なる値を代入したら値を更新、
+    /// RemoveObjectCheckコルーチンを再スタートさせる。
+    /// </summary>
     public int Interval
     {
         get
@@ -58,11 +65,20 @@ public class Pool : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// ↓の引数がなければこれがアタッチされた帯ジェクトを親にする。
+    /// </summary>
+    /// <returns></returns>
     public GameObject GetInstance()
     {
         return GetInstance(transform);
     }
 
+    /// <summary>
+    /// parentの子としてプールのオブジェクトを取り出す。
+    /// </summary>
+    /// <param name="parent"></param>
+    /// <returns></returns>
     public GameObject GetInstance(Transform parent)
     {
         pooledObjectList.RemoveAll((obj) => obj == null);
@@ -88,6 +104,10 @@ public class Pool : MonoBehaviour
         return null;
     }
 
+    /// <summary>
+    /// interval秒ごとにRemoveObject(prepareCount)
+    /// </summary>
+    /// <returns></returns>
     IEnumerator RemoveObjectCheck()
     {
         while (true)
@@ -97,10 +117,16 @@ public class Pool : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// プールサイズが期待値を超過した場合デストロイする。
+    /// </summary>
+    /// <param name="max">期待値</param>
     public void RemoveObject(int max)
     {
+        //期待値よりも実際のプールのほうがでかい
         if (pooledObjectList.Count > max)
         {
+            //プールと期待値の差
             int needRemoveCount = pooledObjectList.Count - max;
             foreach (GameObject obj in pooledObjectList.ToArray())
             {
@@ -118,8 +144,14 @@ public class Pool : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 新しいオブジェクトにこのスクリプトのインスタンスを格納したうえでprefabを引数で初期化して生成したインスタンスを返す。
+    /// </summary>
+    /// <param name="obj">poolするオブジェクト</param>
+    /// <returns></returns>
     public static Pool GetObjectPool(GameObject obj)
     {
+        //thisがアタッチされたオブジェクトが存在するかどうか。なければ作成。
         if (poolAttachedObject == null)
         {
             poolAttachedObject = GameObject.Find("ObjectPool");
