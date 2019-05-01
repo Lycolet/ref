@@ -20,6 +20,11 @@ public class PlayerController : SingletonMonoBehaviour<PlayerController> {
 		Move();
 	}
 
+    //#######################################################################################
+
+    /// <summary>
+    /// 自機の移動
+    /// </summary>
 	private void Move()
 	{
 		Vector2 moveDir = new Vector2();
