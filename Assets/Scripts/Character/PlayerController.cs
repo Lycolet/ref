@@ -20,6 +20,11 @@ public class PlayerController : SingletonMonoBehaviour<PlayerController> {
 		Move();
 	}
 
+	void OnTriggerEnter2D(Collider2D other){
+
+		Debug.Log("teteetetete");
+	}
+
     //#######################################################################################
 
     /// <summary>
