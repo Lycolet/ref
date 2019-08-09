@@ -1,17 +1,22 @@
-﻿using System.Collections;
+﻿using System.CodeDom;
+using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
+using TMPro.EditorUtilities;
 using UnityEditor;
 
-public class CustomEditor : Editor {
-    // Start is called before the first frame update
-    void Start()
+[UnityEditor.CustomEditor(typeof(GameManager.Roll))]
+public class CustomEditor : Editor
+{
+    private bool folding = false;
+    public override void OnInspectorGUI()
     {
-        
-    }
+        base.OnInspectorGUI();
+        var gm = target as GameManager;
 
-    // Update is called once per frame
-    void Update()
-    {
+        EditorGUILayout.BeginHorizontal();
+        gm.ss.time = EditorGUILayout.FloatField(gm.ss.time);
+        EditorGUILayout.EndHorizontal();
         
     }
 }

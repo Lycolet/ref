@@ -2,20 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : SingletonMonoBehaviour<GameManager> {
+public class GameManager : SingletonMonoBehaviour<GameManager>
+{
 	[SerializeField] private Vector2 mapRange = new Vector2(5.625f, 10f);
 	[SerializeField] private float padding = 1f;
+	[SerializeField] private List<Roll> roll = new List<Roll>();
+	[SerializeField] public Roll ro { get; set; }
+	[SerializeField] public GameObject gf { get; set; }
+	[SerializeField] public Roll ss;
+	
+	[SerializeField]
+	public List<Roll> GameRoll { get; set; }
 
-	// Use this for initialization
-	void Start () {
-		
+	[System.Serializable] public class Roll
+	{
+		public float time;
+		public GameObject enemy;
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
 	/// <summary>
 	/// 引数の座標が画面内に存在するか確認する。画面内であればtrue。
 	/// </summary>

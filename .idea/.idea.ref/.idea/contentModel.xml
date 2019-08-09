@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Lycolet\.Rider2019.1\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Lycolet\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_ref.-1599582854.00" t="ExcludeRecursive" />
+    <e p="Z:\ProjectData\GitHub\ref" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Editor" t="Include">
+          <e p="CustomEditor.cs" t="Include" />
+          <e p="GameRollWindow.cs" t="Include" />
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="Barrage" t="Include">
+            <e p="BarrageController.cs" t="Include" />
+            <e p="BaseBarrage.cs" t="Include" />
+            <e p="Bullet.cs" t="Include" />
+            <e p="BulletBehavior.cs" t="Include" />
+            <e p="FanBarrage.cs" t="Include" />
+            <e p="KineticBurst.cs" t="Include" />
+          </e>
+          <e p="Character" t="Include">
+            <e p="Enemy.cs" t="Include" />
+            <e p="EnemyInstanciater.cs" t="Include" />
+            <e p="PlayerController.cs" t="Include" />
+          </e>
+          <e p="system" t="Include">
+            <e p="GameManager.cs" t="Include" />
+            <e p="Pool.cs" t="Include" />
+            <e p="SingletonMonoBehavior.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="ref.sln" t="IncludeFlat" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
