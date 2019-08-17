@@ -99,6 +99,7 @@ public class GameRollWindow : EditorWindow
 //        time = EditorGUILayout.FloatField(time, GUILayout.Width(40));
         if (GUILayout.Button("Add", GUILayout.Width(80)))
         {
+            enemies.Add(new Enemy(null, 0));
             size++;
         }
         if (GUILayout.Button("Paste", GUILayout.Width(80)))
@@ -112,12 +113,13 @@ public class GameRollWindow : EditorWindow
         {
             EditorGUILayout.BeginHorizontal();
             EditorGUILayout.LabelField("time", GUILayout.Width(40));
-            time = EditorGUILayout.FloatField(time, GUILayout.Width(40));
+            enemies[i].time = EditorGUILayout.FloatField(enemies[i].time, GUILayout.Width(40));
             EditorGUILayout.LabelField("enemy", GUILayout.Width(40));
-            enemy = (GameObject) EditorGUILayout.ObjectField(enemy, typeof(GameObject), true);
+            enemies[i].obj = (GameObject) EditorGUILayout.ObjectField(enemies[i].obj, typeof(GameObject), true);
             if (GUILayout.Button("削除", GUILayout.Width(30)))
             {
                 size--;
+                enemies.Remove(enemies[i]);
             }
             EditorGUILayout.EndHorizontal();
         }
